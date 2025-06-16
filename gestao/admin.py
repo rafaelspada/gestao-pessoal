@@ -17,4 +17,4 @@ class GrupoAdmin(admin.ModelAdmin):
 
 admin.site.register(Despesa)
 class DespesaAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'valor', 'data', 'parcela', 'grupo_despesa', 'metodos_despesa')
+    list_display = ('nome', 'valor', 'parcela', 'grupo_despesa', 'metodos_despesa', 'pessoa_despesa', 'data_compra', 'data_pagamento')
