@@ -6,38 +6,46 @@
 </head>
 <body>
   <div>
-    <form>
+    <form action="." method="POST">
         {% csrf_token %}
         <p>
             <label for="form.nome.id_for_label">{{ form.nome.label }}</label>
+            {{ form.nome.erros }}
             {{ form.nome }}
         </p>
         <p>
             <label for="form.valor.id_for_label">{{ form.valor.label }}</label>
+            {{ form.valor.errors }}
             {{ form.valor }}
         </p>
         <p>
             <label for="form.data_pagamento.id_for_label">{{ form.data_pagamento.label }}</label>
+            {{ form.data_pagamento.errors }}
             {{ form.data_pagamento }}
         </p>
         <p>
             <label for="form.data_compra.id_for_label">{{ form.data_compra.label }}</label>
+            {{ form.data_compra.errors }}
             {{ form.data_compra }}
         </p>
         <p>
             <label for="form.valor.id_for_label">{{ form.parcela.label }}</label>
+            {{ form.parcela.errors }}
             {{ form.parcela }}
         </p>
         <p>
             <label for="form.valor.id_for_label">{{ form.grupo_despesa.label }}</label>
+            {{ form.grupo_despesa.errors }}
             {{ form.grupo_despesa }}
         </p>
         <p>
             <label for="form.valor.id_for_label">{{ form.metodos_despesa.label }}</label>
+            {{ form.metodos_despesa.errors }}
             {{ form.metodos_despesa }}
         </p>
         <p>
             <label for="form.pessoa_despesa.id_for_label">{{  form.pessoa_despesa.label }}</label>
+            {{ form.pessoa_despesa.errors }}
             {{ form.pessoa_despesa }}
         </p>
         <input type="submit"  value="cadastrar"/>

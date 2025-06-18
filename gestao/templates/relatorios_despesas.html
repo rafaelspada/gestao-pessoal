@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div>
+  <canvas id="myChart" ></canvas>
+</div>
+
+<script>
+    const ctx = document.getElementById('myChart').getContext("2d");
+    var chartData = {{ mensal.valor }};
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels:['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho'],
+            datasets: [{
+                label: '',
+                data: chartData.values,
+                borderWidth: 1,
+            }],
+        },
+        options: {
+               scales:{
+                   y:{
+                       beginAtZero: true
+                   }
+               }
+        }
+    });
+</script>
+
+
+<!--
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho'],
+      datasets: [{
+        label: '',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      },
+          {
+                type: 'line',
+                label: 'Line Dataset',
+                data: [14, 13, 4, 1],
+            }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+-->
+</body>
+</html>

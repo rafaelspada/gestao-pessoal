@@ -22,6 +22,7 @@ class Grupo(models.Model):
 class Despesa(models.Model):
     nome = models.CharField(max_length=100)
     valor = models.FloatField()
+    forma_compra = models.DateField()
     data_pagamento = models.DateField()
     data_compra = models.DateField()
     parcela = models.FloatField()
