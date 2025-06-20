@@ -18,21 +18,24 @@
             {{ form.valor.errors }}
             {{ form.valor }}
         </p>
+
         <p>
-            <label for="form.data_pagamento.id_for_label">{{ form.data_pagamento.label }}</label>
-            {{ form.data_pagamento.errors }}
-            {{ form.data_pagamento }}
+            <label for="form.metodo.id_for_label">{{ form.metodo.label }}</label>
+            {{ form.metodo.errors }}
+            {{ form.metodo }}
         </p>
-        <p>
-            <label for="form.data_compra.id_for_label">{{ form.data_compra.label }}</label>
-            {{ form.data_compra.errors }}
-            {{ form.data_compra }}
-        </p>
-        <p>
-            <label for="form.parcela.id_for_label">{{ form.parcela.label }}</label>
-            {{ form.parcela.errors }}
-            {{ form.parcela }}
-        </p>
+
+        <div>
+
+            <p>
+                <label for="formAvista.data_pagamento.id_for_label">{{ formAvista.data_pagamento.label }}</label>
+                {{ formAvista.data_pagamento.errors }}
+                {{ formAvista.data_pagamento }}
+            </p>
+
+
+        </div>
+
         <p>
             <label for="form.grupo_despesa.id_for_label">{{ form.grupo_despesa.label }}</label>
             {{ form.grupo_despesa.errors }}
