@@ -1,8 +1,10 @@
 from django.db.models.fields import return_None
-from django.http import HttpResponseRedirect
-from django.views.generic import TemplateView, View
+from django.http import HttpResponseRedirect, JsonResponse
+from django.shortcuts import render
+from django.views.generic import TemplateView, View, ListView, DetailView, CreateView, UpdateView, DeleteView
 from .forms import DespesaForm
 from .models import Despesa
+from django.db.models import Sum
 
 class DespesaView(TemplateView):
     template_name = 'cadastro_despesa.html'
@@ -23,15 +25,25 @@ class DespesaView(TemplateView):
         if form.is_valid():
             print("Formulario valido")
             form.save()
-
+            return self.render_to_response({'form': form})
 
         else:
             print("Formulario invalido")
             return self.render_to_response({'form': form})
 
-class RelatorioView(TemplateView):
+class RelatorioView(ListView):
+    model = Despesa
+    template_name = 'relatorios_despesas.html'
+    context_object_name = 'despesas'
 
-    def get_context_data(self, **kwargs):
+    '''def get_context_data(self, **kwargs):
         template_name = 'relatorios_despesas.html'
         mensal = Despesa.objects.all()
-        context = {'mensal': mensal}
+        context = {'mensal': mensal}'''
+
+"""    def get(self, request, *args, **kwargs):
+        context = super(RelatorioView, self).get(request, *args, **kwargs)
+        total = Despesa.objects.all()
+        context["total"] = total
+        return self.render_to_response(context)"""
+
