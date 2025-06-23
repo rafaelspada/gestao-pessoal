@@ -26,10 +26,7 @@ class Despesa(models.Model):
 
     nome = models.CharField(max_length=100)
     valor = models.FloatField()
-    metodo = models.CharField(choices=CHOICE_METODOS, max_length=2, default='AV')
-    #data_pagamento = models.DateField()
-    #data_compra = models.DateField()
-    #parcela = models.FloatField()
+    metodo_pagamento = models.CharField(choices=CHOICE_METODOS, max_length=2, default='AV')
     grupo_despesa = models.ForeignKey('Grupo', on_delete=models.CASCADE)
     metodos_despesa = models.ForeignKey('Metodos', on_delete=models.CASCADE)
     pessoa_despesa = models.ForeignKey('Pessoa', on_delete=models.CASCADE)

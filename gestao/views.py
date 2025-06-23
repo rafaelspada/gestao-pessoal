@@ -29,21 +29,21 @@ class DespesaView(TemplateView):
             print("Formulario valido")
             formulario = form.save()
 
-            if formulario.metodo == 'AV':
+            if formulario.metodo_pagamento == 'AV':
                 formav = AvistaForm(request.POST)
-                formav.avista_despesa = formulario.id
+                formav.instance.avista_despesa = formulario
                 if formav.is_valid():
                     formav.save()
 
-            elif formulario.metodo == 'AP':
+            elif formulario.metodo_pagamento == 'AP':
                 formap = AprazoForm(request.POST)
-                formap.avista_despesa = formulario.id
+                formap.instance.aprazo_despesa = formulario
                 if formap.is_valid():
                     formap.save()
 
-            elif form.metodo == 'ME':
+            elif formulario.metodo_pagamento == 'MS':
                 formme = MensalForm(request.POST)
-                formme.avista_despesa = formulario.id
+                formme.instance.mensal_despesa = formulario
                 if formme.is_valid():
                     formme.save()
 

@@ -9,45 +9,63 @@
     <form action="." method="POST">
         {% csrf_token %}
         <p>
-            <label for="form.nome.id_for_label">{{ form.nome.label }}</label>
-            {{ form.nome.erros }}
+            <label for="{{ form.nome.id_for_label }}">{{ form.nome.label }}</label>
+            {{ form.nome.errors }}
             {{ form.nome }}
         </p>
         <p>
-            <label for="form.valor.id_for_label">{{ form.valor.label }}</label>
+            <label for="{{ form.valor.id_for_label }}">{{ form.valor.label }}</label>
             {{ form.valor.errors }}
             {{ form.valor }}
         </p>
 
         <p>
-            <label for="form.metodo.id_for_label">{{ form.metodo.label }}</label>
-            {{ form.metodo.errors }}
-            {{ form.metodo }}
+            <label for="{{ form.metodo_pagamento.id_for_label }}">{{ form.metodo_pagamento.label }}</label>
+            {{ form.metodo_pagamento.errors }}
+            {{ form.metodo_pagamento }}
         </p>
 
         <div>
 
             <p>
-                <label for="formAvista.data_pagamento.id_for_label">{{ formAvista.data_pagamento.label }}</label>
+                Pagamento à vista <br>
+                <label for="{{ formAvista.data_pagamento.id_for_label }}">{{ formAvista.data_pagamento.label }}</label>
                 {{ formAvista.data_pagamento.errors }}
                 {{ formAvista.data_pagamento }}
             </p>
 
+            <p>
+                pagamento a prazo <br>
+                <label for="{{ formAprazo.data_pagamento.id_for_label }}">{{ formAprazo.data_pagamento.label }}</label>
+                {{ formAprazo.data_pagamento.errors }}
+                {{ formAprazo.data_pagamento }}
+            </p>
+            <p>
+                <label for="{{ formAprazo.parcelas.id_for_label }}">{{ formAprazo.parcelas.label }}</label>
+                {{ formAprazo.parcelas.errors }}
+                {{ formAprazo.parcelas }}
+            </p>
+            <p>
+                pagamento mensal <br>
+                <label for="{{ formMensal.dia_pagamento.id_for_label }}">{{ formMensal.dia_pagamento.label }}</label>
+                {{ formMensal.dia_pagamento.errors }}
+                {{ formMensal.dia_pagamento }}
+            </p>
 
         </div>
 
         <p>
-            <label for="form.grupo_despesa.id_for_label">{{ form.grupo_despesa.label }}</label>
+            <label for="{{ form.grupo_despesa.id_for_label }}">{{ form.grupo_despesa.label }}</label>
             {{ form.grupo_despesa.errors }}
             {{ form.grupo_despesa }}
         </p>
         <p>
-            <label for="form.metodos_despesa.id_for_label">{{ form.metodos_despesa.label }}</label>
+            <label for="{{ form.metodos_despesa.id_for_label }}">{{ form.metodos_despesa.label }}</label>
             {{ form.metodos_despesa.errors }}
             {{ form.metodos_despesa }}
         </p>
         <p>
-            <label for="form.pessoa_despesa.id_for_label">{{  form.pessoa_despesa.label }}</label>
+            <label for="{{ form.pessoa_despesa.id_for_label }}">{{  form.pessoa_despesa.label }}</label>
             {{ form.pessoa_despesa.errors }}
             {{ form.pessoa_despesa }}
         </p>
